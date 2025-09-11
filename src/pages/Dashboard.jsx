@@ -48,11 +48,11 @@ const DashboardCards = () => {
       {stats.map((stat, index) => (
         <div
           key={index}
-          className="bg-white shadow-md rounded-2xl p-5 flex items-center justify-between hover:shadow-lg transition"
+          className="bg-white dark:bg-gray-800 shadow-md rounded-2xl p-5 flex items-center justify-between hover:shadow-lg transition"
         >
           <div>
             {/* Use translation keys */}
-            <p className="text-gray-600">{t(`dashboardCards.${stat.key}`, stat.title)}</p>
+            <p className="text-gray-600 dark:text-gray-400">{t(`dashboardCards.${stat.key}`, stat.title)}</p>
             <h2 className="text-2xl font-bold">{stat.value}</h2>
           </div>
           <div className={`p-3 rounded-full ${stat.color}`}>
@@ -69,22 +69,22 @@ const Dashboard = () => {
     <div className="flex flex-col space-y-8">
       <DashboardCards />
 
-      <div className="bg-white rounded-lg shadow p-4">
+      <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
         <MapSection />
         <AnalyticsCharts />
       </div>
 
-      <div className="bg-white rounded-lg shadow p-4">
+      <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
         <ReportsTable />
         <ActivityLog />
       </div>
 
-      <div className="bg-white rounded-lg shadow p-4">
+      <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
         <AddReportForm />
         <ReportsList />
       </div>
 
-      <div className="bg-white rounded-lg shadow p-4">
+      <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
         <Footer />
       </div>
     </div>

@@ -42,7 +42,7 @@ const ReportsTable = () => {
   });
 
   return (
-    <div className="bg-white shadow-md rounded-2xl p-5">
+    <div className="bg-white dark:bg-gray-800 shadow-md rounded-2xl p-5">
       <h2 className="text-xl font-bold mb-4">Reported Issues</h2>
 
       {/* Filters Section */}
@@ -50,12 +50,12 @@ const ReportsTable = () => {
         <input
           type="text"
           placeholder="Search by issue or location"
-          className="p-2 border rounded-lg w-full lg:w-1/3"
+          className="p-2 border border-gray-300 dark:border-gray-600 rounded-lg w-full lg:w-1/3 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-200"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
         <select
-          className="p-2 border rounded-lg"
+          className="p-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-200"
           value={statusFilter}
           onChange={(e) => setStatusFilter(e.target.value)}
         >
@@ -65,7 +65,7 @@ const ReportsTable = () => {
           <option>Resolved</option>
         </select>
         <select
-          className="p-2 border rounded-lg"
+          className="p-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-200"
           value={categoryFilter}
           onChange={(e) => setCategoryFilter(e.target.value)}
         >
@@ -81,14 +81,14 @@ const ReportsTable = () => {
 
       {/* Table */}
       <div className="overflow-x-auto">
-        <table className="w-full border border-gray-200 rounded-lg">
+        <table className="w-full border border-gray-200 dark:border-gray-700 rounded-lg">
           <thead className="bg-green-600 text-white">
             <tr>
-              <th className="px-4 py-2 border">#</th>
-              <th className="px-4 py-2 border">Issue</th>
-              <th className="px-4 py-2 border">Location</th>
-              <th className="px-4 py-2 border">Category</th>
-              <th className="px-4 py-2 border">Status</th>
+              <th className="px-4 py-2 border border-gray-200 dark:border-gray-700">#</th>
+              <th className="px-4 py-2 border border-gray-200 dark:border-gray-700">Issue</th>
+              <th className="px-4 py-2 border border-gray-200 dark:border-gray-700">Location</th>
+              <th className="px-4 py-2 border border-gray-200 dark:border-gray-700">Category</th>
+              <th className="px-4 py-2 border border-gray-200 dark:border-gray-700">Status</th>
             </tr>
           </thead>
           <tbody>
@@ -96,20 +96,20 @@ const ReportsTable = () => {
               filteredReports.map((report) => (
                 <tr
                   key={report.id}
-                  className="text-center hover:bg-green-50 cursor-pointer"
+                  className="text-center hover:bg-green-50 dark:hover:bg-green-900 cursor-pointer"
                   onClick={() => setSelectedReport(report)}
                 >
-                  <td className="border px-4 py-2">{report.id}</td>
-                  <td className="border px-4 py-2">{report.issue}</td>
-                  <td className="border px-4 py-2">{report.location}</td>
-                  <td className="border px-4 py-2">{report.category}</td>
+                  <td className="border border-gray-200 dark:border-gray-700 px-4 py-2">{report.id}</td>
+                  <td className="border border-gray-200 dark:border-gray-700 px-4 py-2">{report.issue}</td>
+                  <td className="border border-gray-200 dark:border-gray-700 px-4 py-2">{report.location}</td>
+                  <td className="border border-gray-200 dark:border-gray-700 px-4 py-2">{report.category}</td>
                   <td
-                    className={`border px-4 py-2 font-semibold ${
+                    className={`border border-gray-200 dark:border-gray-700 px-4 py-2 font-semibold ${
                       report.status === "Resolved"
-                        ? "text-green-600"
+                        ? "text-green-600 dark:text-green-400"
                         : report.status === "Pending"
-                        ? "text-red-600"
-                        : "text-yellow-600"
+                        ? "text-red-600 dark:text-red-400"
+                        : "text-yellow-600 dark:text-yellow-400"
                     }`}
                   >
                     {report.status}
@@ -130,9 +130,9 @@ const ReportsTable = () => {
       {/* Modal */}
       {selectedReport && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <div className="bg-white rounded-lg shadow-lg p-6 w-96 relative">
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 w-96 relative">
             <button
-              className="absolute top-2 right-2 text-gray-600 hover:text-black"
+              className="absolute top-2 right-2 text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white"
               onClick={() => setSelectedReport(null)}
             >
               ✖

@@ -30,16 +30,16 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
 
   return (
     <div
-      className={`fixed top-0 left-0 h-full bg-white shadow-lg w-64 transform transition-transform duration-300 z-40 ${
+      className={`fixed top-0 left-0 h-full bg-white dark:bg-gray-800 shadow-lg w-64 transform transition-transform duration-300 z-40 ${
         isOpen ? "translate-x-0" : "-translate-x-full"
       }`}
       onMouseLeave={closeSidebar}
     >
-      <div className="flex justify-between items-center p-4 border-b">
-        <h1 className="text-lg font-bold text-green-700">Staff Panel</h1>
+      <div className="flex justify-between items-center p-4 border-b border-gray-200 dark:border-gray-700">
+        <h1 className="text-lg font-bold text-green-700 dark:text-green-400">Staff Panel</h1>
         <button
           onClick={closeSidebar}
-          className="text-green-700 hover:bg-green-100 rounded p-1"
+          className="text-green-700 dark:text-green-400 hover:bg-green-100 dark:hover:bg-green-900 rounded p-1"
           aria-label="Close sidebar"
         >
           <X className="w-5 h-5" />
@@ -51,7 +51,7 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
           {menuItems.map((item, index) => (
             <li
               key={index}
-              className="group flex items-center px-4 py-2 text-gray-700 hover:bg-green-100 cursor-pointer transition"
+              className="group flex items-center px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-green-100 dark:hover:bg-green-900 cursor-pointer transition"
               onClick={() => handleNavigation(item.path)}
               role="button"
               tabIndex={0}
@@ -61,7 +61,7 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
                 }
               }}
             >
-              <item.icon className="w-5 h-5 text-green-700" />
+              <item.icon className="w-5 h-5 text-green-700 dark:text-green-400" />
               <span className="ml-3">{item.name}</span>
             </li>
           ))}

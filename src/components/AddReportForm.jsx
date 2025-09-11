@@ -39,46 +39,46 @@ const AddReportForm = ({ juniorStaffList = [] }) => {
   };
 
   return (
-    <div className="bg-white shadow-md rounded-2xl p-6 mt-6 max-w-md mx-auto">
-      <h2 className="text-xl font-bold mb-6 text-center">Assign Task to Staff</h2>
+    <div className="bg-white dark:bg-gray-800 shadow-md rounded-2xl p-6 mt-6 max-w-md mx-auto">
+      <h2 className="text-xl font-bold mb-6 text-center text-gray-900 dark:text-gray-100">Assign Task to Staff</h2>
       <form className="space-y-5" onSubmit={handleSubmit}>
 
         {/* Issue Title */}
         <div>
-          <label className="block mb-1 font-semibold">Issue Title</label>
+          <label className="block mb-1 font-semibold text-gray-900 dark:text-gray-100">Issue Title</label>
           <input
             type="text"
             name="issue"
             value={formData.issue}
             onChange={handleChange}
             placeholder="Enter issue title"
-            className="w-full p-2 border rounded-lg"
+            className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-200"
             required
           />
         </div>
 
         {/* Location */}
         <div>
-          <label className="block mb-1 font-semibold">Location</label>
+          <label className="block mb-1 font-semibold text-gray-900 dark:text-gray-100">Location</label>
           <input
             type="text"
             name="location"
             value={formData.location}
             onChange={handleChange}
             placeholder="Enter location"
-            className="w-full p-2 border rounded-lg"
+            className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-200"
             required
           />
         </div>
 
         {/* Category */}
         <div>
-          <label className="block mb-1 font-semibold">Category</label>
+          <label className="block mb-1 font-semibold text-gray-900 dark:text-gray-100">Category</label>
           <select
             name="category"
             value={formData.category}
             onChange={handleChange}
-            className="w-full p-2 border rounded-lg"
+            className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-200"
           >
             <option>Road</option>
             <option>Electricity</option>
@@ -90,25 +90,25 @@ const AddReportForm = ({ juniorStaffList = [] }) => {
 
         {/* Description */}
         <div>
-          <label className="block mb-1 font-semibold">Description</label>
+          <label className="block mb-1 font-semibold text-gray-900 dark:text-gray-100">Description</label>
           <textarea
             name="description"
             value={formData.description}
             onChange={handleChange}
             placeholder="Enter detailed description"
-            className="w-full p-2 border rounded-lg"
+            className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-200"
             rows="3"
           />
         </div>
 
         {/* Assign To */}
         <div>
-          <label className="block mb-1 font-semibold">Assign To</label>
+          <label className="block mb-1 font-semibold text-gray-900 dark:text-gray-100">Assign To</label>
           <select
             name="assignedTo"
             value={formData.assignedTo}
             onChange={handleChange}
-            className="w-full p-2 border rounded-lg"
+            className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-200"
             required
           >
             <option value="" disabled>
@@ -124,13 +124,13 @@ const AddReportForm = ({ juniorStaffList = [] }) => {
 
         {/* Upload Image */}
         <div>
-          <label className="block mb-1 font-semibold">Upload Image (Optional)</label>
+          <label className="block mb-1 font-semibold text-gray-900 dark:text-gray-100">Upload Image (Optional)</label>
           <input
             type="file"
             name="image"
             accept="image/*"
             onChange={handleChange}
-            className="w-full"
+            className="w-full text-gray-900 dark:text-gray-200"
           />
         </div>
 
